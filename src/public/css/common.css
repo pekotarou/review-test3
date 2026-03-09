@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+.error {
+    color: #ff6b6b;
+    /* 修正: 要件どおり赤系 */
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+button {
+    font: inherit;
+}
