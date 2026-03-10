@@ -170,10 +170,40 @@ body {
 }
 
 .detail-link {
-    color: #6c63ff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
     text-decoration: none;
-    font-weight: bold;
 }
+
+.detail-link__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    /* 修正: グラデーション */
+    background: linear-gradient(90deg, #a3b7ff, #d38de8);
+
+    /* 修正: PNG画像をマスクとして使う */
+    -webkit-mask-image: url('/images/pencil.png');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+
+    mask-image: url('/images/pencil.png');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
+
+.detail-link:hover .detail-link__icon {
+    background: linear-gradient(90deg, #8fa6ff, #c66ee2);
+}
+
+
+
 
 .weight-table__empty {
     text-align: center;
@@ -185,4 +215,375 @@ body {
     margin-top: 24px;
     display: flex;
     justify-content: center;
+}
+
+
+.search-result-text {
+    margin: 0 0 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.search-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.search-form__error {
+    margin: 0;
+    color: #ff6b6b;
+    font-size: 12px;
+}
+
+/* 以下、体重追加ページのCSS */
+.weight-form-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.weight-form-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.weight-form-card__header {
+    margin-bottom: 32px;
+}
+
+.weight-form-card__title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.weight-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.weight-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.weight-form__label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.weight-form__input,
+.weight-form__textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 14px;
+    background: #fff;
+}
+
+.weight-form__input {
+    height: 44px;
+}
+
+.weight-form__textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.weight-form__input-unit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.weight-form__unit {
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+}
+
+.weight-form__error {
+    margin: 0;
+    color: #ff6b6b;
+    font-size: 13px;
+}
+
+.weight-form__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.weight-form__button {
+    min-width: 160px;
+    height: 44px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weight-form__button--back {
+    background: #e0dfde;
+    color: #333;
+}
+
+.weight-form__button--submit {
+    background: linear-gradient(90deg, #a3b7ff, #d38de8);
+    color: #fff;
+}
+
+/*体重編集画面のCSS*/
+.weight-form-card__header--between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.delete-button {
+    min-width: 90px;
+    height: 40px;
+    border: 1px solid #ff6b6b;
+    border-radius: 8px;
+    background: #fff;
+    color: #ff6b6b;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/*目標変更画面 */
+.goal-setting-page {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.goal-setting-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.goal-setting-card__header {
+    margin-bottom: 32px;
+}
+
+.goal-setting-card__title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.goal-setting-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.goal-setting-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.goal-setting-form__label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.goal-setting-form__input-unit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.goal-setting-form__input {
+    width: 100%;
+    height: 44px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0 14px;
+    font-size: 14px;
+    background: #fff;
+}
+
+.goal-setting-form__unit {
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+}
+
+.goal-setting-form__error {
+    margin: 0;
+    color: #ff6b6b;
+    font-size: 13px;
+}
+
+.goal-setting-form__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.goal-setting-form__button {
+    min-width: 160px;
+    height: 44px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goal-setting-form__button--back {
+    background: #e0dfde;
+    color: #333;
+}
+
+.goal-setting-form__button--submit {
+    background: linear-gradient(90deg, #a3b7ff, #d38de8);
+    color: #fff;
+}
+
+/* ページネーション*/
+.pagination-area {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.custom-pagination__pages {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.custom-pagination__page,
+.custom-pagination__arrow,
+.custom-pagination__dots {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    font-size: 16px;
+    color: #8b8b8b;
+    text-decoration: none;
+}
+
+.custom-pagination__page {
+    border-radius: 8px;
+}
+
+.custom-pagination__page--active {
+    background: linear-gradient(90deg, #a3b7ff, #d38de8);
+    color: #fff;
+    font-weight: bold;
+}
+
+.custom-pagination__arrow {
+    font-weight: bold;
+}
+
+.custom-pagination__arrow--disabled {
+    color: #ccc;
+    pointer-events: none;
+}
+
+
+/* 修正: 一覧テーブルの各行にうっすら薄いグレーのhover */
+.weight-table tbody tr:hover {
+    background: #f5f5f5;
+    transition: background-color 0.2s ease;
+}
+
+
+/* 修正: 更新ボタン右の削除アイコン */
+.delete-icon-button {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.delete-icon-image {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.delete-icon-button:hover {
+    opacity: 0.7;
+}
+
+/* 修正: モーダル表示用 */
+.modal-page {
+    position: relative;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 16px;
+    z-index: 1000;
+}
+
+.modal-card {
+    width: 100%;
+    max-width: 760px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-card__header {
+    margin-bottom: 24px;
+}
+
+.modal-card__title {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
 }
