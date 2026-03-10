@@ -14,12 +14,18 @@
 
             <div class="header__nav">
                 {{-- 修正: 目標設定ページへのリンク --}}
-                <a href="{{ route('goal_setting.edit') }}" class="header__link">目標体重設定</a>
+                <a href="{{ route('goal_setting.edit') }}" class="header__link">
+                    <img src="{{ asset('images/icon-setting.png') }}" alt="" class="header__icon">
+                    <span>目標体重設定</span>
+                </a>
 
-                {{-- 修正: ログアウト --}}
+                {{-- 修正: 左側にログアウトアイコン画像を追加 --}}
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="header__button">ログアウト</button>
+                    <button type="submit" class="header__button">
+                        <img src="{{ asset('images/icon-logout.png') }}" alt="" class="header__icon">
+                        <span>ログアウト</span>
+                    </button>
                 </form>
             </div>
         </div>

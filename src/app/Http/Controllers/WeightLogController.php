@@ -78,8 +78,14 @@ class WeightLogController extends Controller
         $isSearching = $request->filled('start_date') || $request->filled('end_date'); // 修正: 検索中か判定
 
         // 修正: 検索条件の文字列を作る
-        $startDate = $request->start_date ?: '指定なし';
-        $endDate = $request->end_date ?: '指定なし';
+        $startDate = $request->start_date
+        ? \Carbon\Carbon::parse($request->start_date)->format('Y年m月d日')
+        : '指定なし';
+
+    $endDate = $request->end_date
+        ? \Carbon\Carbon::parse($request->end_date)->format('Y年m月d日')
+        : '指定なし';
+        
         $searchSummary = $startDate . '〜' . $endDate . ' の検索結果 ' . $weightLogs->total() . '件';
 
 

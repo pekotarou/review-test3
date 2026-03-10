@@ -24,9 +24,9 @@
                         value="{{ old('date', now()->format('Y-m-d')) }}"
                         class="weight-form__input"
                     >
-                    @error('date')
-                        <p class="weight-form__error">{{ $message }}</p>
-                    @enderror
+                    @foreach ($errors->get('date') as $error)
+                        <p class="weight-form__error">{{ $error }}</p>
+                    @endforeach
                 </div>
 
                 <div class="weight-form__group">
@@ -42,9 +42,9 @@
                         >
                         <span class="weight-form__unit">kg</span>
                     </div>
-                    @error('weight')
-                        <p class="weight-form__error">{{ $message }}</p>
-                    @enderror
+                    @foreach ($errors->get('weight') as $error)
+                        <p class="weight-form__error">{{ $error }}</p>
+                    @endforeach
                 </div>
 
                 <div class="weight-form__group">
@@ -60,9 +60,9 @@
                         >
                         <span class="weight-form__unit">cal</span>
                     </div>
-                    @error('calories')
-                        <p class="weight-form__error">{{ $message }}</p>
-                    @enderror
+                     @foreach ($errors->get('calories') as $error)
+                        <p class="weight-form__error">{{ $error }}</p>
+                    @endforeach
                 </div>
 
                 <div class="weight-form__group">
@@ -74,9 +74,11 @@
                         value="{{ old('exercise_time') }}"
                         class="weight-form__input"
                     >
-                    @error('exercise_time')
-                        <p class="weight-form__error">{{ $message }}</p>
-                    @enderror
+                    @foreach ($errors->get('exercise_time') as $error)
+                        <p class="weight-form__error">{{ $error }}</p>
+                    @endforeach
+
+
                 </div>
 
                 <div class="weight-form__group">
@@ -87,9 +89,9 @@
                         placeholder="運動内容を追加"
                         class="weight-form__textarea"
                     >{{ old('exercise_content') }}</textarea>
-                    @error('exercise_content')
-                        <p class="weight-form__error">{{ $message }}</p>
-                    @enderror
+                    @foreach ($errors->get('exercise_content') as $error)
+                        <p class="weight-form__error">{{ $error }}</p>
+                    @endforeach
                 </div>
 
                 <div class="weight-form__buttons">

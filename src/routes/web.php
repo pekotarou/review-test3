@@ -29,8 +29,7 @@ Route::get('/register/step2', [RegisterController::class, 'createStep2'])->name(
 Route::post('/register/step2', [RegisterController::class, 'storeStep2'])->name('register.step2.store');
 
 // Fortify の /login, /logout は Fortify 側で持つ想定
-
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'preventBackHistory'])->group(function () {
     Route::get('/weight_logs', [WeightLogController::class, 'index'])->name('weight_logs.index');
     Route::get('/weight_logs/search', [WeightLogController::class, 'search'])->name('weight_logs.search');
     Route::get('/weight_logs/create', [WeightLogController::class, 'create'])->name('weight_logs.create');
