@@ -361,7 +361,9 @@ body {
 }
 
 .weight-form__button--back,
-.weight-form__button--submit {
+.weight-form__button--submit,
+.goal-setting-form__button--back,
+.goal-setting-form__button--submit {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -484,6 +486,11 @@ body {
     background: linear-gradient(90deg, #a3b7ff, #d38de8);
     color: #fff;
 }
+
+
+
+
+
 
 /* ページネーション*/
 .pagination-area {
