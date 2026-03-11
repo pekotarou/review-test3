@@ -52,7 +52,7 @@ php artisan db:seed
 ## テーブル設計
 ![alt](table_users.png)
 ![alt](table_weight_logs.png)
-![alt](table_weight_taget.png)
+![alt](table_weight_target.png)
 
 
 ## ER図
