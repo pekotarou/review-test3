@@ -22,13 +22,13 @@ class FortifyServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        ///login にアクセスしたとき、自作Bladeを返す
+        ///loginにアクセスしたとき、aut.loginのBladeを返す
         Fortify::loginView(function () {
             return view('auth.login');
         });
 
         //Fortifyの/registerにアクセスしたときの画面
-        // 今回は STEP1 を表示
+        //今回はstep1を表示
         Fortify::registerView(function () {
             return view('auth.register-step1');
         });
