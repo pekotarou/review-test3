@@ -64,12 +64,12 @@ php artisan db:seed
 
 ## ダミーデータについて
 - user 1件（データ追加の記録35件、目標体重設定済み）
-    メールアドレス： tony@gmail.com
-    パスワード：　AmericanAmerican
+- メールアドレス： tony@gmail.com
+- パスワード：　AmericanAmerican
 
 ## ログイン試行回数について
 - src > app > providers > FortifyServiceProvider.php
-    上記のpublic function boot()にて、ログイン試行回数を多く設定しています。不要であれば、以下の箇所をコメントアウト又は削除してください。
+- 上記のpublic function boot()にて、ログイン試行回数を多く設定しています。不要であれば、以下の箇所をコメントアウト又は削除してください。
     ```
     //ログイン試行回数少し増やす
     RateLimiter::for('login', function (Request $request) {
