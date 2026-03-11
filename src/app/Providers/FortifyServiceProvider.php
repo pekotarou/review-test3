@@ -22,22 +22,23 @@ class FortifyServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        // 修正: /login にアクセスしたとき、自作Bladeを返す
+        ///login にアクセスしたとき、自作Bladeを返す
         Fortify::loginView(function () {
             return view('auth.login');
         });
 
-        // 修正: Fortify の /register にアクセスしたときの画面
+        //Fortifyの/registerにアクセスしたときの画面
         // 今回は STEP1 を表示
         Fortify::registerView(function () {
             return view('auth.register-step1');
         });
 
-        // 修正: 開発中はログイン試行回数を少し緩める
+        //ログイン試行回数少し増やす
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;
 
             return Limit::perMinute(10)->by($email . $request->ip());
         });
+        
     }
 }

@@ -33,8 +33,8 @@ class GoalSettingRequest extends FormRequest
     {
         return [
             'target_weight.required' => '目標体重を入力してください',
-            'target_weight.numeric' => '数字で入力してください',
-            'target_weight.regex' => '4桁までの数字で小数点は1桁で入力してください',
+            'target_weight.numeric' => '4桁までの数字で入力してください',
+            'target_weight.regex' => '小数点は1桁で入力してください',
         ];
     }
 

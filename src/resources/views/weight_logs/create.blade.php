@@ -16,7 +16,9 @@
                 @csrf
 
                 <div class="weight-form__group">
-                    <label for="date" class="weight-form__label">日付</label>
+                    <label for="date" class="weight-form__label">日付
+                        <span class="required-badge">必須</span>
+                    </label>
                     <input
                         type="date"
                         id="date"
@@ -30,7 +32,9 @@
                 </div>
 
                 <div class="weight-form__group">
-                    <label for="weight" class="weight-form__label">体重</label>
+                    <label for="weight" class="weight-form__label">体重
+                        <span class="required-badge">必須</span>
+                    </label>
                     <div class="weight-form__input-unit">
                         <input
                             type="text"
@@ -48,7 +52,9 @@
                 </div>
 
                 <div class="weight-form__group">
-                    <label for="calories" class="weight-form__label">摂取カロリー</label>
+                    <label for="calories" class="weight-form__label">摂取カロリー
+                        <span class="required-badge">必須</span>
+                    </label>
                     <div class="weight-form__input-unit">
                         <input
                             type="text"
@@ -66,7 +72,9 @@
                 </div>
 
                 <div class="weight-form__group">
-                    <label for="exercise_time" class="weight-form__label">運動時間</label>
+                    <label for="exercise_time" class="weight-form__label">運動時間
+                        <span class="required-badge">必須</span>
+                    </label>
                     <input
                         type="time"
                         id="exercise_time"
