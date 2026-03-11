@@ -67,9 +67,11 @@ body {
 }
 
 .summary-card {
+    position: relative;
+        /* 修正: 縦線の基準位置にする */
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 0px; /*修正*/
     background: #fff;
     border-radius: 16px;
     padding: 24px 32px;
@@ -79,7 +81,32 @@ body {
 .summary-card__item {
     flex: 1;
     text-align: center;
+    padding: 0 24px;/* 修正: 左右余白を追加 */
 }
+
+/* 修正: 1本目の縦線 */
+.summary-card::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    bottom: 24px;
+    left: 33.333%;
+    width: 1px;
+    background: #d9d9d9;
+    transform: translateX(-50%);
+}
+/* 修正: 2本目の縦線 */
+.summary-card::after {
+    content: "";
+    position: absolute;
+    top: 24px;
+    bottom: 24px;
+    left: 66.666%;
+    width: 1px;
+    background: #d9d9d9;
+    transform: translateX(-50%);
+}
+
 
 .summary-card__label {
     margin: 0 0 12px;
