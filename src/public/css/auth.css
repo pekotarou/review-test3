@@ -71,4 +71,8 @@
     margin-top: 16px;
     font-size: 13px;
     color: #5da8ff;
+
+    text-decoration: underline;
+    text-decoration-color: #5da8ff;
+    text-underline-offset: 3px;
 }
