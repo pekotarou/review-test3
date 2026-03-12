@@ -29,7 +29,7 @@ class RegisterStep1Request extends FormRequest
             'password' => ['required', 'string', 'min:8'],
         ];
     }
-
+    //ステップ１のバリデーション
     public function messages(): array
     {
         return [

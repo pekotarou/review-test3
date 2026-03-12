@@ -17,8 +17,8 @@ class CreateWeightTargetsTable extends Migration
             $table->id();
             $table->foreignId('user_id')
                 ->constrained()
-                ->onDelete('cascade'); // ユーザー削除時に関連データも削除
-            $table->decimal('target_weight', 4, 1); // 目標体重　 4桁（小数点前3桁＋小数点後1桁）
+                ->onDelete('cascade'); //ユーザー削除時に関連データも削除
+            $table->decimal('target_weight', 4, 1); //目標体重4桁（小数点前3桁＋小数点後1桁）
             $table->timestamps();
         });
     }

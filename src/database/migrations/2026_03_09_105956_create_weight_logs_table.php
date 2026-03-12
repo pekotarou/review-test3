@@ -17,11 +17,11 @@ class CreateWeightLogsTable extends Migration
             $table->id();
             $table->foreignId('user_id')
                 ->constrained()
-                ->onDelete('cascade'); // 修正: users と紐づけ
+                ->onDelete('cascade'); //usersと紐づけ
             $table->date('date');
-            $table->decimal('weight', 4, 1); // 体重　 4桁（小数点前3桁＋小数点後1桁）
-            $table->integer('calories')->nullable(); // 食事量
-            $table->time('exercise_time')->nullable(); // 運動時間 メール形式からtime型へ修正
+            $table->decimal('weight', 4, 1); //体重4桁（小数点前3桁＋小数点後1桁）
+            $table->integer('calories')->nullable(); //食事量
+            $table->time('exercise_time')->nullable(); //運動時間
             $table->text('exercise_content')->nullable();
             $table->timestamps();
         });

@@ -29,6 +29,7 @@ class RegisterStep2Request extends FormRequest
         ];
     }
 
+    //ステップ２のバリデーション
     public function messages(): array
     {
         return [

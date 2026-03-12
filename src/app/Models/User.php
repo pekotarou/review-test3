@@ -33,11 +33,13 @@ class User extends Authenticatable
 
     public function weightTarget()
     {
+        //目標体重の値を返す
         return $this->hasOne(WeightTarget::class);
     }
 
     public function weightLogs()
     {
+        //複数のWeightLogの値を返す
         return $this->hasMany(WeightLog::class);
     }
 }

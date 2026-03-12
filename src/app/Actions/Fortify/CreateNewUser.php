@@ -12,9 +12,7 @@ use Laravel\Fortify\Contracts\CreatesNewUsers;
 
 class CreateNewUser implements CreatesNewUsers
 {
-    /**
-     * 修正: STEP1 + STEP2 の全入力を受け取って、ユーザー関連データをまとめて作成
-     */
+    /** ステップ２の全部の入力情報を受け取って、ユーザー関連データをまとめて作成する*/
     public function create(array $input): User
     {
         Validator::make($input, [
@@ -39,20 +37,20 @@ class CreateNewUser implements CreatesNewUsers
         ])->validate();
 
         return DB::transaction(function () use ($input) {
-            // 修正: users テーブル作成
+            //usersテーブル作成
             $user = User::create([
                 'name' => $input['name'],
                 'email' => $input['email'],
-                'password' => Hash::make($input['password']), // 修正: ハッシュ化
+                'password' => Hash::make($input['password']), //ハッシュ化
             ]);
 
-            // 修正: 目標体重作成
+            //目標体重作成
             WeightTarget::create([
                 'user_id' => $user->id,
                 'target_weight' => $input['target_weight'],
             ]);
 
-            // 修正: 初期体重ログ作成
+            //初期体重ログ作成
             WeightLog::create([
                 'user_id' => $user->id,
                 'date' => now()->toDateString(),

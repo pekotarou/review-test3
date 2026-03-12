@@ -27,10 +27,12 @@ class WeightLogUpdateRequest extends FormRequest
             'date' => ['required', 'date'],
             'weight' => ['required', 'numeric', 'regex:/^\d{1,3}(\.\d)?$/'],
             'calories' => ['required', 'integer'],
-            'exercise_time' => ['required', 'date_format:H:i'], // 修正: メール形式ではなく時刻
+            'exercise_time' => ['required',  'date_format:H:i,H:i:s'], //メール形式ではなく時刻
             'exercise_content' => ['required', 'string', 'max:120'],
         ];
     }
+
+    //体重変更のバリデーション
      public function messages(): array
     {
         return [

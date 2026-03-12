@@ -27,11 +27,12 @@ class WeightLogStoreRequest extends FormRequest
             'date' => ['required', 'date'],
             'weight' => ['required', 'numeric', 'regex:/^\d{1,3}(\.\d)?$/'],
             'calories' => ['required', 'integer'],
-            'exercise_time' => ['required', 'date_format:H:i'], // 修正: メール形式ではなく時刻
+            'exercise_time' => ['required', 'date_format:H:i'], //メール形式ではなく時刻
             'exercise_content' => ['required', 'string', 'max:120'],
         ];
     }
-    //バリデーションが正しく表示されたら、以下の細かい文章を後で直すこと！今は仮置きでとりあえずサラッと入力しておく（2026/03/10）
+
+    //体重記録のバリデーション
      public function messages(): array
     {
         return [

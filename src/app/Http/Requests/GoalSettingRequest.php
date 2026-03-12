@@ -29,6 +29,7 @@ class GoalSettingRequest extends FormRequest
         ];
     }
 
+    //目標体重設定のバリデーション
     public function messages(): array
     {
         return [

@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="modal-page">
-    {{-- 修正: 背景に管理画面を表示 --}}
+    <!--背景に管理画面を表示-->
     @include('weight_logs._content')
 
-    {{-- 修正: 半透明オーバーレイ --}}
+    <!--半透明オーバーレイ-->
     <div class="modal-overlay">
         <div class="modal-card">
             <div class="modal-card__header">

@@ -14,7 +14,6 @@ a {
 
 .error {
     color: #ff6b6b;
-    /* 修正: 要件どおり赤系 */
     font-size: 12px;
     margin-top: 6px;
 }

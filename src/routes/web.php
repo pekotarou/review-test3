@@ -34,19 +34,11 @@ Route::middleware(['auth', 'preventBackHistory'])->group(function () {
     Route::get('/weight_logs/search', [WeightLogController::class, 'search'])->name('weight_logs.search');
     Route::get('/weight_logs/create', [WeightLogController::class, 'create'])->name('weight_logs.create');
 
-     Route::get('/weight_logs/goal_setting', [GoalSettingController::class, 'edit'])->name('goal_setting.edit');
+    Route::get('/weight_logs/goal_setting', [GoalSettingController::class, 'edit'])->name('goal_setting.edit');
     Route::put('/weight_logs/goal_setting', [GoalSettingController::class, 'update'])->name('goal_setting.update');
 
-
-
-
-
     Route::post('/weight_logs', [WeightLogController::class, 'store'])->name('weight_logs.store');
-
-    Route::get('/weight_logs/{weightLog}', [WeightLogController::class, 'show'])->name('weight_logs.show');
     Route::get('/weight_logs/{weightLog}/update', [WeightLogController::class, 'edit'])->name('weight_logs.edit');
     Route::put('/weight_logs/{weightLog}', [WeightLogController::class, 'update'])->name('weight_logs.update');
     Route::delete('/weight_logs/{weightLog}', [WeightLogController::class, 'destroy'])->name('weight_logs.destroy');
-
-   
 });

@@ -88,7 +88,7 @@
                 @enderror
             </div>
 
-            {{-- 修正: 更新ボタンと削除アイコンを同じ行に置く --}}
+            <!--更新ボタンと削除アイコンを同じ行に置く-->
             <div class="weight-form__buttons">
                 <a href="{{ route('weight_logs.index') }}" class="weight-form__button weight-form__button--back">
                     戻る
@@ -109,7 +109,7 @@
             </div>
         </form>
 
-        {{-- 修正: 削除フォームは外に置き、form属性で送信 --}}
+        <!--削除フォームは外に置き、form属性で送信-->
         <form
             id="delete-form"
             action="{{ route('weight_logs.destroy', $weightLog->id) }}"
